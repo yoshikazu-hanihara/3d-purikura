@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Cat Mug Customization</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  <body>
+    <h1>猫フィギュア付きマグカップ デコレーション</h1>
+    <div id="uploader">
+      <label for="photoInput">写真アップロード (1枚限定):</label>
+      <input type="file" id="photoInput" accept="image/*">
+    </div>
+
+    <!-- 3D表示エリア -->
+    <canvas id="threeCanvas"></canvas>
+
+    <!-- シール一覧 -->
+    <div id="stickers">
+      <p>シールを選択:</p>
+      <img src="{{ url_for('static', filename='images/sticker_heart.png') }}" data-sticker="heart" width="50" />
+      <img src="{{ url_for('static', filename='images/sticker_cat.png') }}" data-sticker="cat" width="50" />
+      <!-- 在庫等の表示も任意で実装 -->
+    </div>
+
+    <button id="sendDesign">このデザインで注文</button>
+
+    <!-- Three.js / OrbitControls / GLTFLoader -->
+    <script src="{{ url_for('static', filename='js/three.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/OrbitControls.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/GLTFLoader.js') }}"></script>
+
+    <!-- メインスクリプト -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  </body>
+</html>
